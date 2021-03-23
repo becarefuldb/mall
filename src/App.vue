@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <main-tab-bar></main-tab-bar>    
-    <router-view/>
+    <main-tab-bar class="tabBar"></main-tab-bar>   
+     <!--keep-alive 保证组件不被销毁  -->
+    <keep-alive><router-view/></keep-alive> 
   </div>
 </template>
 
@@ -16,5 +17,6 @@ export default {
 </script>
 
 <style>
- @import 'assets/tabbar/css/base.css'
+ @import 'assets/tabbar/css/base.css';
+ 
 </style>

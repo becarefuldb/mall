@@ -34,7 +34,7 @@ export default {
     text-align: center;    
     font-size: 14px;
     padding: 10px 0px 20px 0px;    
-    border-bottom: 3px solid rgba(100, 100 ,100, 0.5);
+    border-bottom: 3px solid rgb(163, 214, 216);
   }
   .recommendItem{
     flex: 1;

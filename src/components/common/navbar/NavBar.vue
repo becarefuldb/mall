@@ -18,10 +18,10 @@ export default {
 
 <style scoped>
  .navBar{
-   display: flex;
+   /* display: flex; */
    height: 44px;
    line-height: 44px;
-   background-color: cadetblue;  
+   background-color:var(--color-high-text);  
    text-align: center;  
    position: fixed;
    top: 0;left: 0;right: 0;

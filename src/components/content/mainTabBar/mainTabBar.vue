@@ -1,6 +1,6 @@
 <template>
   <div >
-     <tab-bar>
+     <tab-bar class="tabbar">
       <!-- activeColor为文字颜色 -->
       <tabBarItem path="/home" >
         <img slot="tabbar_icon" src="~assets/tabbar/img/home.png" alt="" />
@@ -44,5 +44,7 @@ export default {
 
 
 <style scoped>
-
+  .tabbar{    
+   z-index: 99; 
+  }
 </style>

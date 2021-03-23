@@ -1,7 +1,35 @@
-import {request} from '@/network/request'
+import {
+  request
+} from '@/network/request'
 
-export function getHomeMultidata(){
+export function getHomeMultidata() {
   return request({
-    url:'/home/multidata'
+    url: '/home/multidata'
   })
+}
+
+export function getHomeGoods (type, page) {
+  return request({
+    url: '/home/data',
+    params: {
+      type,
+      page
+    }
+
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
