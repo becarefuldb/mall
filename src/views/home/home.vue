@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <navBar><div slot="navBar-center">主页</div></navBar>
+    <navBar class="navBarStyle"><div slot="navBar-center" >主页</div></navBar>
 
     <tabControl
       :tabTitle="tabTitle"
@@ -134,7 +134,7 @@ export default {
     swiperImgLoad() {
       //获取tabcontrol的offset
       this.tabOffsetTop = this.$refs.tabControl1.$el.offsetTop;
-      console.log(this.tabOffsetTop);
+      
     },
 
     /**
@@ -169,9 +169,14 @@ export default {
 
 <style scoped>
 #home {
-  padding-top: 49px;
+  /* padding-top: 49px; */
   height: 100vh;
   position: relative;
+}
+.navBarStyle{
+   background-color:var(--color-high-text);
+   color: white; 
+   
 }
 /* .tabcontrol {  
   position: fixed;
@@ -181,17 +186,17 @@ export default {
 } */
 .content {
   position: absolute;
-  top: 38px;
+  top: 44px;
   bottom: 49px;
   left: 0;
   right: 0px;
   overflow: hidden;
 }
 .topTabControl {
-  position: fixed;
-  top: 44px;
+  position:relative;
+  /* top: 44px;
   left: 7px;
-  right: 7px;
+  right: 7px; */
   z-index: 99;
 }
 </style>

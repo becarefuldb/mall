@@ -30,6 +30,8 @@ module.exports = {
       'store':resolve('src/store'),
       'views':resolve('src/views'),
       'assets':resolve('src/assets'),
+      'network':resolve('src/network'),
+
     }
   },
   module: {

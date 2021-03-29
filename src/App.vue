@@ -2,7 +2,7 @@
   <div id="app">
     <main-tab-bar class="tabBar"></main-tab-bar>   
      <!--keep-alive 保证组件不被销毁  -->
-    <keep-alive><router-view/></keep-alive> 
+    <keep-alive exclude="Detail"><router-view/></keep-alive> 
   </div>
 </template>
 

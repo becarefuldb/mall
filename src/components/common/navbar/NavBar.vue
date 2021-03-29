@@ -18,20 +18,21 @@ export default {
 
 <style scoped>
  .navBar{
-   /* display: flex; */
+   display: flex;
    height: 44px;
    line-height: 44px;
-   background-color:var(--color-high-text);  
+   /* background-color:var(--color-high-text);   */
    text-align: center;  
-   position: fixed;
+   /* position: fixed; */
    top: 0;left: 0;right: 0;
    z-index: 99;
+   box-shadow: 0px -3px 5px rgba(100, 100, 100,0.5)
  }
  .navBar-left,.navBar-right{
    width: 66px;     
  }
  .navBar-center{
-   color: white;
+   /* color: white; */
    flex: 1;
  }
 </style>
