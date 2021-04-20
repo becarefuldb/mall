@@ -10,8 +10,7 @@
           :key="item.id"
           class="titleItem"          
           :class="{ active: currentIndex === index }"
-          @click="titleClick(index)"
-        >
+          @click="titleClick(index)" >
           {{ item }}
         </div>
       </div>
@@ -38,6 +37,8 @@ export default {
   methods: {
     titleClick(index) {
       this.currentIndex = index;
+      this.$emit("navClick",index)
+
     },
     titleLeftClick(){
       this.$router.back(-1)

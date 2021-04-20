@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <navBar class="navBarStyle"><div slot="navBar-center" >主页</div></navBar>
+    <navBar class="navBarStyle"><div slot="navBar-center">主页</div></navBar>
 
     <tabControl
       :tabTitle="tabTitle"
@@ -48,8 +48,12 @@ import HomeRecommendView from "./childComponents/HomeRecommendView";
 //方法
 import { getHomeMultidata, getHomeGoods } from "@/network/home.js";
 
+//混入
+import { MyMixin } from "components/mixins/Mixins";
+
 export default {
   name: "home",
+  mixins: [MyMixin],
   data() {
     return {
       tabTitle: ["流行", "新款", "推荐"],
@@ -61,8 +65,7 @@ export default {
         sell: { page: 0, list: [] },
       },
       currentType: "pop",
-      isShow: false,
-      offSetTop: null,
+      offSetTop: null,    
       topIsShow: false,
       tabOffsetTop: 0,
       saveY: 0,
@@ -117,13 +120,10 @@ export default {
       this.$refs.tabControl1.currentIndex = index;
       this.$refs.tabControl2.currentIndex = index;
     },
-    //回到首页
-    backClick() {
-      this.$refs.scroll.scrollTo(0, 0);
-    },
+
     //滑动超过一定距离，显示backtop图标
     contentScroll(position) {
-      this.isShow = -position.y > 1000;
+      this.isShowBackTop(position); // 混入的返回顶部方法
       this.topIsShow = -position.y > this.tabOffsetTop;
     },
     //上拉下载更多
@@ -134,7 +134,6 @@ export default {
     swiperImgLoad() {
       //获取tabcontrol的offset
       this.tabOffsetTop = this.$refs.tabControl1.$el.offsetTop;
-      
     },
 
     /**
@@ -173,10 +172,14 @@ export default {
   height: 100vh;
   position: relative;
 }
-.navBarStyle{
-   background-color:var(--color-high-text);
-   color: white; 
-   
+.navBarStyle {  
+  background-color: var(--color-high-text);
+  color: white;
+  /* position: fixed; */
+  /* top: 0;
+  left: 0;
+  right: 0; */
+  z-index: 9;
 }
 /* .tabcontrol {  
   position: fixed;
@@ -189,14 +192,14 @@ export default {
   top: 44px;
   bottom: 49px;
   left: 0;
-  right: 0px;
+  right: 0;
   overflow: hidden;
 }
 .topTabControl {
-  position:relative;
-  /* top: 44px;
-  left: 7px;
-  right: 7px; */
-  z-index: 99;
+  position: relative;
+  /* top: 44px; */
+  /* left: 7px;
+  right: 7px;  */
+  z-index: 9;
 }
 </style>

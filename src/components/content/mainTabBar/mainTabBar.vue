@@ -44,7 +44,6 @@ export default {
 
 
 <style scoped>
-  .tabbar{    
-   z-index: 99; 
-  }
+  
+ 
 </style>

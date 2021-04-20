@@ -17,7 +17,8 @@ export default {
 
 
 <style scoped>
- .navBar{
+ .navBar{   
+   /* position: relative; */
    display: flex;
    height: 44px;
    line-height: 44px;
@@ -26,7 +27,7 @@ export default {
    /* position: fixed; */
    top: 0;left: 0;right: 0;
    z-index: 99;
-   box-shadow: 0px -3px 5px rgba(100, 100, 100,0.5)
+   /* box-shadow: 0px -3px 5px rgba(100, 100, 100,0.5) */
  }
  .navBar-left,.navBar-right{
    width: 66px;     
